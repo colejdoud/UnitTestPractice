@@ -16,7 +16,14 @@ class PasswordTest : public ::testing::Test
 
 TEST(PasswordTest, single_letter_password)
 {
-	Password my_password;
-	int actual = my_password.count_leading_characters("Z");
-	ASSERT_EQ(1, actual);
+    Password my_password;
+    int actual = my_password.count_leading_characters("Z");
+    ASSERT_EQ(1, actual);
+}
+
+TEST(PasswordTest, double_letter_password)
+{
+    Password my_password;
+    int actual = my_password.count_leading_characters("aaZ");
+    ASSERT_EQ(2, actual);
 }
